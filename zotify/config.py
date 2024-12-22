@@ -93,7 +93,7 @@ CONFIG_VALUES = {
     BULK_WAIT_TIME:             { 'default': '1',                       'type': int,    'arg': ('--bulk-wait-time'                       ,) },
     OVERRIDE_AUTO_WAIT:         { 'default': 'False',                   'type': bool,   'arg': ('--override-auto-wait'                   ,) },
     CHUNK_SIZE:                 { 'default': '20000',                   'type': int,    'arg': ('--chunk-size'                           ,) },
-    DOWNLOAD_REAL_TIME:         { 'default': 'False',                   'type': bool,   'arg': ('-rt', '--download-real-time'            ,) },
+    DOWNLOAD_REAL_TIME:         { 'default': '0',                       'type': int,    'arg': ('-rt', '--download-real-time'            ,) },
     LANGUAGE:                   { 'default': 'en',                      'type': str,    'arg': ('--language'                             ,) },
     PRINT_SPLASH:               { 'default': 'False',                   'type': bool,   'arg': ('--print-splash'                         ,) },
     PRINT_SKIPS:                { 'default': 'True',                    'type': bool,   'arg': ('--print-skips'                          ,) },
@@ -242,7 +242,7 @@ class Config:
         return cls.get(LANGUAGE)
     
     @classmethod
-    def get_download_real_time(cls) -> bool:
+    def get_download_real_time(cls) -> int:
         return cls.get(DOWNLOAD_REAL_TIME)
     
     @classmethod

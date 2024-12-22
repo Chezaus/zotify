@@ -155,10 +155,11 @@ def download_episode(episode_id, wrapper_p_bars: list | None = None) -> None:
                     downloaded += len(data)
                     if data == b'':
                         break
-                    if Zotify.CONFIG.get_download_real_time():
+                    if Zotify.CONFIG.get_download_real_time != 0 ():
+                        t = Zotify.CONFIG.get_download_real_time
                         delta_real = time.time() - time_start
                         delta_want = (downloaded / total_size) * (duration_ms/1000)
-                        if delta_want > delta_real:
+                        if delta_want > delta_real * t:
                             time.sleep(delta_want - delta_real)
         else:
             filepath = PurePath(download_directory).joinpath(f"{filename}.mp3")
