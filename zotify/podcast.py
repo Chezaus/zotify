@@ -155,8 +155,8 @@ def download_episode(episode_id, wrapper_p_bars: list | None = None) -> None:
                     downloaded += len(data)
                     if data == b'':
                         break
-                    if Zotify.CONFIG.get_download_real_time != 0 ():
-                        t = Zotify.CONFIG.get_download_real_time
+                    if Zotify.CONFIG.get_download_real_time() != 0:
+                        t = Zotify.CONFIG.get_download_real_time()
                         delta_real = time.time() - time_start
                         delta_want = (downloaded / total_size) * (duration_ms/1000)
                         if delta_want > delta_real * t:
