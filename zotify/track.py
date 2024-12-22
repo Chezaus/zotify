@@ -266,7 +266,7 @@ def download_track(mode: str, track_id: str, extra_keys=None, wrapper_p_bars: li
                                 delta_real = (time.time() - time_start) * t
                                 delta_want = (downloaded / total_size) * (duration_ms/1000)
                                 if delta_want > delta_real:
-                                    time.sleep(delta_want - delta_real)
+                                    time.sleep(delta_want - delta_real/t)
                     
                     time_downloaded = time.time()
                     

@@ -160,7 +160,7 @@ def download_episode(episode_id, wrapper_p_bars: list | None = None) -> None:
                         delta_real = (time.time() - time_start) * t
                         delta_want = (downloaded / total_size) * (duration_ms/1000)
                         if delta_want > delta_real:
-                            time.sleep(delta_want - delta_real)
+                            time.sleep(delta_want - delta_real/t)
         else:
             filepath = PurePath(download_directory).joinpath(f"{filename}.mp3")
             download_podcast_directly(direct_download_url, filepath)
