@@ -93,7 +93,7 @@ Set arguments in the commandline like this: `-sc False` or `--codec mp3`. Wrap a
 | `BULK_WAIT_TIME`             | `--bulk-wait-time`                       | 1         | The wait time between bulk downloads
 | `OVERRIDE_AUTO_WAIT`         | `--override-auto-wait`                   | False     | Totally disable wait time between songs with the risk of instability
 | `CHUNK_SIZE`                 | `--chunk-size`                           | 20000     | Chunk size for downloading
-| `DOWNLOAD_REAL_TIME`         | `-rt`, `--download-real-time`            | False     | Downloads songs as fast as they would be played, should prevent account bans
+| `DOWNLOAD_REAL_TIME`         | `-rt`, `--download-real-time`            | 0         | Specifies the download speed, where 1 means real-time speed and 2 means twice the real-time speed, should prevent account bans
 | `LANGUAGE`                   | `--language`                             | en        | Language of metadata
 | `PRINT_SPLASH`               | `--print-splash`                         | False     | Show the Zotify logo at startup
 | `PRINT_SKIPS`                | `--print-skips`                          | True      | Show messages if a song is being skipped
