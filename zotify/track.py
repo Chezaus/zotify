@@ -263,9 +263,9 @@ def download_track(mode: str, track_id: str, extra_keys=None, wrapper_p_bars: li
                             b += 1 if data == b'' else 0
                             if Zotify.CONFIG.get_download_real_time() != 0:
                                 t = Zotify.CONFIG.get_download_real_time()
-                                delta_real = time.time() - time_start
+                                delta_real = (time.time() - time_start) * t
                                 delta_want = (downloaded / total_size) * (duration_ms/1000)
-                                if delta_want > delta_real * t:
+                                if delta_want > delta_real:
                                     time.sleep(delta_want - delta_real)
                     
                     time_downloaded = time.time()
